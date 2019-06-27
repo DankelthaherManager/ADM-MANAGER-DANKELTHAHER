@@ -105,7 +105,7 @@ byinst="true"
 }
 install_fim () {
 msg -ama "$(source trans -b pt:${id} "Instalacao Completa, Utilize os Comandos"|sed -e 's/[^a-z -]//ig')" && msg bar2
-echo -e " menu / adm"
+echo -e " menu / adm" && msg -verm "$(source trans -b pt:${id} "Reinicie su servidor para completar la instalación"|sed -e 's/[^a-z -]//ig')"
 mkdir /etc/crondbl  > /dev/null 2>&1 
 mkdir /etc/rom  > /dev/null 2>&1
 mkdir /etc/bin  > /dev/null 2>&1
