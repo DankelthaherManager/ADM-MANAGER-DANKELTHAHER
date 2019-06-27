@@ -14,6 +14,7 @@ SCPusr="${SCPdir}/ger-user"
 SCPfrm="/etc/ger-frm"
 SCPfrm3="/etc/adm-lite"
 SCPinst="/etc/ger-inst"
+rm $HOME/Dankelthaher.sh
 SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0RhbmtlbHRoYWhlck1hbmFnZXIvQURNLU1BTkFHRVItREFOS0VMVEhBSEVSL21hc3Rlci9yZXF1ZXN0"
 SUB_DOM='base64 -d'
 [[ $(dpkg --get-selections|grep -w "gawk"|head -1) ]] || apt-get install gawk -y &>/dev/null
@@ -61,7 +62,9 @@ cowsay -f eyes "BIENVENIDO Y GRACIAS POR UTILIZAR NEW-ADM OFICIAL BY DANKELTHAHE
 figlet ..dankelthaher.. | lolcat
  echo -e " "
 msg -bar2
-declare -A idioma=( [1]="en English" [2]="fr Franch" [3]="de German" [4]="it Italian" [5]="pl Polish" [6]="pt Portuguese" [7]="es Spanish" [8]="tr Turkish" )
+echo -e "\e[1;33mSelecione Un Idioma\e[0m"
+msg -bar2
+declare -A idioma=( [1]="en \e[0;37mIngles \e[0m "  [2]="fr \e[0;37mFrances \e[0m "  [3]="de \e[0;37mAleman \e[0m "  [4]="it \e[0;37mItaliano \e[0m "  [5]="pl \e[0;37mPolaco \e[0m "  [6]="pt \e[0;37mPortugues \e[0m "  [7]="es \e[0;37mEspanol \e[0m "  [8]="tr \e[0;37mTurko \e[0m " )
 for ((i=1; i<=12; i++)); do
 valor1="$(echo ${idioma[$i]}|cut -d' ' -f2)"
 [[ -z $valor1 ]] && break
@@ -96,7 +99,7 @@ done
 msg -bar2
 unset selection
 while [[ ${selection} != @([1-8]) ]]; do
-echo -ne "\033[1;37mSELECT: " && read selection
+echo -ne "\033[1;37mSELECIONE: " && read selection
 tput cuu1 && tput dl1
 done
 pv="$(echo ${idioma[$selection]}|cut -d' ' -f1)"
@@ -104,7 +107,7 @@ pv="$(echo ${idioma[$selection]}|cut -d' ' -f1)"
 byinst="true"
 }
 install_fim () {
-msg -ama "$(source trans -b pt:${id} "Instalacao Completa, Utilize os Comandos"|sed -e 's/[^a-z -]//ig')" && msg bar2
+msg -ama "$(source trans -b es:${id} "Instalación completa, utilice los comandos"|sed -e 's/[^a-z -]//ig')" && msg bar2
 echo -e " menu / adm" && msg -verm "$(source trans -b pt:${id} "Reinicie su servidor para completar la instalación"|sed -e 's/[^a-z -]//ig')"
 mkdir /etc/crondbl  > /dev/null 2>&1 
 mkdir /etc/rom  > /dev/null 2>&1
