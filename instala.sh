@@ -112,6 +112,7 @@ echo -e " menu / adm" && msg -verm "$(source trans -b pt:${id} "Reinicie su serv
 mkdir /etc/crondbl  > /dev/null 2>&1 
 mkdir /etc/rom  > /dev/null 2>&1
 mkdir /etc/bin  > /dev/null 2>&1
+mkdir /etc/nanobc  > /dev/null 2>&1
 msg -bar2
 }
 ofus () {
