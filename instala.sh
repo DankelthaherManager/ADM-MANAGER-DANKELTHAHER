@@ -153,9 +153,16 @@ case $1 in
 "openvpn.sh")ARQ="${SCPinst}/";; #Instalacao
 "ssl.sh")ARQ="${SCPinst}/";; #Instalacao
 "ssld.sh")ARQ="${SCPinst}/";; #Instalacao
+"sslmanager.sh")ARQ="${SCPinst}/";; #Instalacao
+"errormanager.sh")ARQ="${SCPinst}/";; #Instalacao
+"shadown.sh")ARQ="${SCPinst}/";; #Instalacao
+"shadowsock.sh")ARQ="${SCPinst}/";; #Instalacao
+"shadowsocks.sh")ARQ="${SCPinst}/";; #Instalacao
 "shadown.sh")ARQ="${SCPinst}/";; #Instalacao
 "ssrrmu.sh")ARQ="${SCPinst}/";; #Instalacao
 "shadowsocks.sh")ARQ="${SCPinst}/";; #Instalacao
+"v2ray.sh")ARQ="${SCPinst}/";; #Instalacao
+"vdoray.sh")ARQ="${SCPinst}/";; #Instalacao
 "sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py")ARQ="${SCPinst}/";; #Instalacao
 *)ARQ="${SCPfrm}/";; #Ferramentas
 esac

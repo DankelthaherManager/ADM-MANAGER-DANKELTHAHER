@@ -546,15 +546,23 @@ case $1 in
 "speed.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "TEST DE VELOCIDAD") $ofc";;
 "ultrahost")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "SCANNER DE SUBDOMINIO") $ofc";;
 "ADMbot.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "BOT DE GESTION") TELEGRAM $ofc";;
+"hora.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ACTUALIZAR ZONA HORARIO") $ofc";;
+"permisos_passwd.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -ama "$(fun_trans "ROOT/") VURTL/ GoogleCloud y Amazon $premium";;
 "openssh.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "OPENSSH $(pid_inst sshd)";;
 "squid.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "SQUID $(pid_inst squid)";;
 "dropbear.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "DROPBEAR $(pid_inst dropbear)";;
 "openvpn.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "OPENVPN $(pid_inst openvpn)";;
 "ssl.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "SSL Dropbear $(pid_inst stunnel4)";;
 "ssld.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "SSL Manager $(pid_inst stunnel4)";;
+"sslmanager.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -ama "SSL MANAGERS $(pid_inst stunnel4)";;
+"errormanager.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -ama "Corrección De Puertos $(pid_inst errormanager)";;
+"shadown.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -bra "Shadowsocks Cloack $(pid_inst ck-server)";;
+"shadowsock.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -bra "Shadowsocks-R,Go,Liv $(pid_inst obfs-serv)";;
 "shadowsocks.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -bra "Shadowsocks-Libev $(pid_inst obfs-serv)";;
 "ssrrmu.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -bra "ShadowsocksR Manager $(pid_inst python)";;
 "sockspy.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "SOCKS PYTHON $(pid_inst python)";;
+"v2ray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -bra "V2ray Panel $(pid_inst v2ray)";;
+"vdoray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -ama "V2ray Manager $(pid_inst v2ray)";;
 "PDirect.py")return 1;;
 "PGet.py")return 1;;
 "POpen.py")return 1;;
@@ -697,8 +705,13 @@ msg -ne "$(fun_trans "DIRECCION DE LA MAQUINA"): " && msg -bra "$(meu_ip)"
 [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MENSAJE: $(cat ${SCPdir}/message.txt)"
 [[ -e ${SCPdir}/key.txt ]] && msg -bar && msg -bra "USER-KEY: $(cat ${SCPdir}/key.txt)"
 # NOVO SISTEMA DE MENUS
+
+# SISTEMA DE HORA 
+_hora=$(printf '%(%H:%M:%S)T')
+# \033[1;31mHORA: \033[1;37m$_hora
+
 msg -bar
-msg -ama "$(fun_trans "MANAGER") \033[1;31m[\033[1;32m NEW-ULTIMATE \033[1;31m] \033[1;33m[\033[1;34m OFICIAL BY DANKELTHAHER \033[1;33m] \033[1;31m[\033[1;37mV 3.0\033[1;31m]"
+msg -ama "$(fun_trans "MANAGER") \033[1;31m[\033[1;32m NEW-ULTIMATE \033[1;31m] \033[1;33m[\033[1;34m OFICIAL BY DANKELTHAHER \033[1;33m] \033[1;31m[\033[1;37m$_hora\033[1;31m] "
 msg -bar
 menu_func "ADMINISTRAR USUARIOS" "HERRAMIENTAS" "MENU DE INSTALACIONES" "-vd ACTUALIZACION" "-vm DESINSTALAR" "-fi $AutoRun INICIO AUTOMATICO" "CAMBIAR IDIOMA" "CAMBIAR COLORES" "-azc WEB PANEL (sshplus)"
 echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") " && msg -bra "$(fun_trans "SALIR DEL SCRIPT")"
