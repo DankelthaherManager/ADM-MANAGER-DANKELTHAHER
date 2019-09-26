@@ -26,7 +26,9 @@ done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
 }
-echo -e "\E[44;1;37m                Optimizar Servidor                \E[0m"
+echo -e "\033[0m\e[31m======================================================\033[1;37m"
+echo -e "\033[0m\e[36m                Optimizar Servidor                "
+echo -e "\033[0m\e[31m======================================================\033[1;37m"
 echo ""
 #
 echo -e "\033[1;32m               Actualizando servicios\033[0m"
@@ -52,7 +54,7 @@ fun_bar 'apt-get -f remove -y' 'apt-get clean -y'
 #Remover paquetes con problemas
 #Limpar  cache de la memoria RAM
 clear
-echo -e "\033[1;31m═══════════════════════════════════════════════\033[0m"
+echo -e "\033[0m\e[31m======================================================\033[1;37m"
 echo ""
 MEM1=`free|awk '/Mem:/ {print int(100*$3/$2)}'`
 ram1=$(free -h | grep -i mem | awk {'print $2'})
@@ -69,7 +71,7 @@ echo -e " \033[1;33mLibre: \033[1;37m$ram2                   \033[1;33mLibre: \0
 echo ""
 echo -e "\033[1;37mMemória \033[1;32mRAM \033[1;37mAntes de Otimizacion:\033[1;36m" $MEM1% 
 echo ""
-echo -e "\033[1;31m═══════════════════════════════════════════════\033[0m"
+echo -e "\033[0m\e[31m======================================================\033[1;37m"
 sleep 3
 echo ""
 fun_limpram () {
@@ -105,7 +107,7 @@ echo -e "\e[1DOk"
 aguarde
 sleep 1.5s
 clear
-echo -e "\033[1;32m═══════════════════════════════════════════════\033[0m"
+echo -e "\033[0m\e[31m======================================================\033[1;37m"
 echo ""
 MEM2=`free|awk '/Mem:/ {print int(100*$3/$2)}'`
 ram1=$(free -h | grep -i mem | awk {'print $2'})
@@ -124,5 +126,4 @@ echo -e "\033[1;37mMemória \033[1;32mRAM \033[1;37mahora en la Otimizacion:\033
 echo ""
 echo -e "\033[1;37mEconomia de :\033[1;31m `expr $MEM1 - $MEM2`%\033[0m"
 
-echo -e "\033[1;35mBY @ALEX_DROID9_0_MX\033[0m"
-echo -e "\033[1;32m═══════════════════════════════════════════════\033[0m"
+echo -e "\033[0m\e[31m======================================================\033[1;37m"

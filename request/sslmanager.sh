@@ -142,7 +142,7 @@ cd $HOME
 rm $HOME/multissl.sh &>/dev/null
 }
 shadow_fun () {
-echo -e " ${cor[7]} $(fun_trans "SSL MANAGER OPENSSH") ${cor[6]}[ALEX_DROID9_0_MX]\033[0m"
+echo -e " ${cor[7]} $(fun_trans "SSL MANAGER OPENSSH") ${cor[6]}[NEWADM]\033[0m"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > ${cor[5]}$(fun_trans "INSTALAR SSL MANUAL-OPENSSH")"

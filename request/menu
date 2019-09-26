@@ -548,6 +548,7 @@ case $1 in
 "ADMbot.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "BOT DE GESTION") TELEGRAM $ofc";;
 "hora.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ACTUALIZAR ZONA HORARIO") $ofc";;
 "permisos_passwd.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -ama "$(fun_trans "ROOT/") VURTL/ GoogleCloud y Amazon $premium";;
+"optimizar.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -ama "$(fun_trans "OCTIMIZADOR DE SERVIDOR $premium";;
 "openssh.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "OPENSSH $(pid_inst sshd)";;
 "squid.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "SQUID $(pid_inst squid)";;
 "dropbear.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "DROPBEAR $(pid_inst dropbear)";;
