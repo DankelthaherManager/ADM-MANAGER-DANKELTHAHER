@@ -42,14 +42,22 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1 && echo -e "\
 echo -e "$barra"
 menu
 }
+act_hora3 () {
+timedatectl > /dev/null 2>&1
+timedatectl list-timezones > /dev/null 2>&1
+timedatectl list-timezones  | grep Santiago > /dev/null 2>&1
+timedatectl set-timezone America/Santiago > /dev/null 2>&1
+echo -e "$barra"
+menu
+}
 shadowe_fun () {
-echo -e " ${cor[7]} $(fun_trans "ZONA HORARIO") ${cor[6]}[NEWADM]\033[0m"
+echo -e " \033[1;36m $(fun_trans "ZONA HORARIO") \033[1;32m[NEW-ADM]"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > ${cor[5]}$(fun_trans "ACTUALIZAR HORARIO  CHICHUAHUA")"
 echo -e "${cor[4]} [2] > ${cor[5]}$(fun_trans "ACTUALIZAR HORARIO  MEXICO")"
 echo -e "${cor[4]} [3] > ${cor[5]}$(fun_trans "ACTUALIZAR HORARIO  HERMOSILLO")"
-echo -e "${cor[4]} [4] > ${cor[0]}$(fun_trans "VOLVER")"
+echo -e "${cor[4]} [4] > ${cor[5]}$(fun_trans "ACTUALIZAR HORARIO  AMERICA/SANTIAGO")"
 echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "SALIR")\n${barra}"
 while [[ ${opx} != @(0|[1-4]) ]]; do
 echo -ne "${cor[0]}$(fun_trans "Digite una Opcion"): \033[1;37m" && read opx
@@ -68,7 +76,8 @@ case $opx in
 	act_hora2
 	break;;
     4)
-	menu;;
+	act_hora3
+	break;;
   
 esac
 done

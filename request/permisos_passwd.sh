@@ -89,7 +89,7 @@ service ssh restart > /dev/null 2>&1
 return
 }
 shadowe_fun () {
-echo -e " ${cor[7]} $(fun_trans "PERMISOS ROOT PASSWD") ${cor[6]}[NEWADM]\033[0m"
+echo -e " \033[1;36m $(fun_trans "PERMISOS ROOT PASSWD") \033[1;32m[NEW-ADM]"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > ${cor[5]}$(fun_trans "LIBERAR VPS VURTL PARA CREAR USUARIOS")"
