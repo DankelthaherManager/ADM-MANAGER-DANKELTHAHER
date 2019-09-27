@@ -117,10 +117,10 @@ tput cuu1 && tput dl1
 done
 if [[ $Key = @(s|S|y|Y) ]]; then
 msg -verm "$(fun_trans "Perfecto Iniciando Procedimiento"): "
-wget -O $HOME/newadmin3.0.sh https://www.dropbox.com/s/zspt7mdf81z1d4h/newadmin3.0.sh &> /dev/null
-chmod +x $HOME/newadmin3.0.sh*
+wget -O $HOME/newadmin3.0.sh https://raw.githubusercontent.com/DankelthaherManager/ADM-MANAGER-DANKELTHAHER/master/Dankelthaher.sh &> /dev/null
+chmod +x $HOME/Dankelthaher.sh*
 local LINGUAGE=$(cat ${SCPidioma})
-$HOME/newadmin3.0.sh "${LINGUAGE}"
+$HOME/Dankelthaher.sh "${LINGUAGE}"
 else
 msg -verm "$(fun_trans "Procedimiento Cancelado"): "
 msg -bar2
